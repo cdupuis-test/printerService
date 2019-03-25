@@ -14,12 +14,12 @@ public class PrintObject {
 
     @Id
     UUID docUUID;
-    byte[] printString;
+    String printString;
     String userid;
     Long createdDate;
     Long printedDate;
 
-    public PrintObject(UUID docUUID, byte[] printString, String userid, Long createdDate, Long printedDate) {
+    public PrintObject(UUID docUUID, String printString, String userid, Long createdDate, Long printedDate) {
         this.docUUID = docUUID;
         this.printString = printString;
         this.userid = userid;

@@ -16,7 +16,7 @@ public class PrinterService {
     {
         PrintObject print = new PrintObject();
         print.setPrintString(Body);
-        print.setUserid(0);
+        print.setUserid("0");
         print.setCreatedDate(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant().getEpochSecond());
         print.setPrintedDate(0L);
 

@@ -8,6 +8,7 @@ public class RabbitMQ {
 
 
     public final String PRINT_VRD1 = CreateRabbitMQQueue("printVRD1", "printVRD1");
+    public final String EXPORT_CERT = CreateRabbitMQQueue("printExportCert", "printExportCert");
     public final String ERROR_QUEUE = CreateRabbitMQQueue("errorQueue", "camel");
 
 

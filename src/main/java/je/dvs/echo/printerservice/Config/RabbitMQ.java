@@ -10,9 +10,6 @@ public class RabbitMQ {
     public final String PRINT_VRD1 = CreateRabbitMQQueue("printVRD1", "printVRD1");
     public final String EXPORT_CERT = CreateRabbitMQQueue("printExportCert", "printExportCert");
     public final String ERROR_QUEUE = CreateRabbitMQQueue("errorQueue", "camel");
-
-
-    private final static String localHostName = "localhost";
     private final static String localPort = "5672";
 
     public static String CreateRabbitMQQueue(String QueueName, String RoutingKey)
@@ -21,7 +18,6 @@ public class RabbitMQ {
         String portv;
         String username;
         String password;
-        String environment_name;
 
         try {
             hostv = System.getenv("V_RABBIT_HOST");

@@ -48,10 +48,10 @@ public class PdfGeneratorUtil {
             renderer.layout();
             renderer.createPDF(os,true);
             JSONObject filepath = new JSONObject(json);
-            filepath.put("FilePath", outputFile.getPath());
+           // filepath.put("FilePath", outputFile.getPath());
 
             System.out.println(outputFile.getPath());
-            filepath.put("FileName", PDF_NAME);
+           // filepath.put("FileName", PDF_NAME);
             os.close();
             byte[] input_file = Files.readAllBytes(Paths.get(outputFile.getPath()));
 

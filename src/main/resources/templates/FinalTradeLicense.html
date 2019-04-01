@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Trade License</title>
+</head>
+<table>
+  <tr th:each="t : ${TradeLicenseList}" th:include="TradeLicense"
+      th:text="300"}
+ />
+</table>
+</html>
+

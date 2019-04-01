@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificate Of Export For A Motor Vehicle</title>
+</head>
+<body>
+<!--<div class='header' th:include="../fragments/header" >-->
+
+  <h3 class="centre">CERTIFICATE OF EXPORT</h3>
+  <h3 class="centre">FOR A MOTOR VEHICLE</h3>
+
+  <td>Date:</td>
+  <strong>
+    <td th:text="${Date}"></td>
+  </strong>
+
+  <td>Registration No.:</td>
+  <strong>
+    <td th:text="${registrationNumber}"></td>
+  </strong>
+
+  <td>No:</td>
+  <strong>
+    <td th:text="${referenceNo}"></td>
+  </strong>
+
+
+  <table class="vehicle_details">
+  <tr>
+    <td>
+      Vin/Chassis/Frame No:
+    </td>
+    <strong>
+      <td th:text="${VinChassisFrame}"></td>
+    </strong>
+    <td>
+      Engine No:
+    </td>
+    <strong>
+      <td th:text="${EngineNo}"></td>
+    </strong>
+  </tr>
+   <tr>
+     <td>
+       Make:
+     </td>
+     <strong>
+       <td th:text="${Make}"></td>
+     </strong>
+     <td>
+       Model:
+     </td>
+     <strong>
+       <td th:text="${Model}"></td>
+     </strong>
+   </tr>
+    <tr>
+      <td>
+        Body Type:
+      </td>
+      <strong>
+      <td th:text="${BodyType}"></td>
+      </strong>
+      <td>
+        Seats:
+      </td>
+      <strong>
+        <td th:text="${Seats}"></td>
+      </strong>
+   </tr>
+    <tr>
+      <td>
+        C.C:
+      </td>
+      <strong>
+        <td th:text="${CC}"></td>
+      </strong>
+      <td>
+        Type Of Fuel:
+      </td>
+      <strong>
+        <td th:text="${TypeOfFuel}"></td>
+      </strong>
+    </tr>
+    <tr>
+      <td>
+        Colour:
+      </td>
+      <strong>
+        <td th:text="${Colour}"></td>
+      </strong>
+      <td>
+        Weight:
+      </td>
+      <strong>
+        <td th:text="${Weight}"></td>
+      </strong>
+    </tr>
+    <tr>
+      <td>
+        Type Approval No:
+      </td>
+      <strong>
+        <td th:text="${TypeApproval}"></td>
+      </strong>
+      <td>
+        CO2g/km:
+      </td>
+      <strong>
+        <td th:text="${CO2}"</td>
+      </strong>
+    </tr>
+    <tr>
+      <td>
+        First Ever Reg'd:
+      </td>
+      <strong>
+      <td th:text="${FirstReg}"</strong>
+      </strong>
+    </tr>
+ </table>
+
+  <h4>TO WHOM IT MAY CONCERN</h4>
+
+  <h5>I hereby certify that the above vehicle was last registered in the name of:</h5>
+
+  <table>
+    <tr>
+      <td>
+        Name:
+      </td>
+      <td th:text="${Name}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Address:
+      </td>
+      <td th:text="${Address}"></td>
+    </tr>
+  </table>
+
+  <h4>WHO ACQUIRED THE VEHICLE ON</h4><td th:text="${RegDate}">
+
+  <h5> The vehicle was</h5><td th:text="${Status}"/>
+
+  <h5>The registration document for this vehicle has been retained by The Driver and Vehicle Standards and the above registration number will not be re-allocated in Jersey</h5>
+
+  <h5>Special Notes:</h5>
+
+  <p th:text="${Notes}"></p>
+
+</body>
+</html>

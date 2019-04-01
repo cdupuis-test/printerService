@@ -1,8 +1,6 @@
 package je.dvs.echo.printerservice.Domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter

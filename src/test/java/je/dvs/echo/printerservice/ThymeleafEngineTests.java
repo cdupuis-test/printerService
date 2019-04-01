@@ -1,6 +1,8 @@
 package je.dvs.echo.printerservice;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import je.dvs.echo.printerservice.Domain.ExportCert;
 import je.dvs.echo.printerservice.Domain.VRD1;
 import je.dvs.echo.printerservice.Domain.trade;
 import je.dvs.echo.printerservice.Service.PdfGeneratorUtil;
@@ -13,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 @RunWith(SpringRunner.class)
@@ -224,6 +227,40 @@ public class ThymeleafEngineTests {
         String Trade = new ObjectMapper().writeValueAsString(TradeLicenseList);
 
         String result = pdfGeneratorUtil.createPdf(Trade,"FinalTradeLicense");
+
+    }
+
+    @Test
+    public void PrintExportCert() throws Exception {
+
+        ExportCert exportCert = new ExportCert();
+        exportCert.Date = LocalDateTime.now().toString();
+        exportCert.registrationNumber = "J12345";
+        exportCert.referenceNo = "CO-3434";
+        exportCert.VinChassisFrame = "303030303003030";
+        exportCert.EngineNo = "3902839505829";
+        exportCert.Make="Nissan";
+        exportCert.Model="Note 5DR 1.4 M VISA";
+        exportCert.CC = "1386";
+        exportCert.Seats="5";
+        exportCert.Colour = "Silver";
+        exportCert.TypeOfFuel="Petrol";
+        exportCert.TypeApproval="E11*2001/116*0268*09";
+        exportCert.CO2= "*";
+        exportCert.FirstReg="19/02/2010";
+        exportCert.Name="Joe Kuberkubekue";
+        exportCert.Address="1 Apple Tree Court";
+        exportCert.Status="REGISTERED";
+        exportCert.Notes="";
+        exportCert.RegDate = LocalDateTime.now().plusDays(1L).toString();
+
+
+        String json = new ObjectMapper().writeValueAsString(exportCert);
+
+        String result =  pdfGeneratorUtil.createPdf(json,"ExportCert");
+
+        System.out.println("Result:" + result);
+
 
     }
 

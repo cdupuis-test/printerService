@@ -14,6 +14,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static junit.framework.TestCase.assertTrue;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -21,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest
-@Ignore
+//@Ignore
 public class PrintControllerAPITests {
 
     @Autowired
@@ -77,6 +80,11 @@ public class PrintControllerAPITests {
     @Test
     public void printVRD1() throws Exception {
 
+        List<VRD1> listVRD1 = new ArrayList<>();
+
+
+
+
         VRD1 vrd1 = new VRD1();
         vrd1.setRegistrationMark(RegistrationMark);
         vrd1.setDocUUID(DocUUID);
@@ -113,7 +121,9 @@ public class PrintControllerAPITests {
         vrd1.setFirstEverReg(FirstEverReg);
         vrd1.setComments(Comments);
 
-        String json = new ObjectMapper().writeValueAsString(vrd1);
+        listVRD1.add(vrd1);
+
+        String json = new ObjectMapper().writeValueAsString(listVRD1);
 
         String Result = pdfGeneratorUtil.createPdf(json, "VRD1");
 

@@ -1,15 +1,15 @@
 package je.dvs.echo.printerservice;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import je.dvs.echo.printerservice.Domain.ExportCert;
 import je.dvs.echo.printerservice.Domain.VRD1;
 import je.dvs.echo.printerservice.Domain.trade;
 import je.dvs.echo.printerservice.Service.PdfGeneratorUtil;
 import je.dvs.echo.printerservice.Service.ThymeleafEngine;
+import org.apache.camel.json.simple.JsonArray;
 import org.json.JSONObject;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +18,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Ignore
+//@Ignore
 public class ThymeleafEngineTests {
 
     @Autowired
@@ -197,15 +196,9 @@ public class ThymeleafEngineTests {
 
 
 
-
-        //Function call
-
       String result =  pdfGeneratorUtil.createPdf(defaultTemplateData.toString(),"VRD1");
 
       System.out.println("Result:" + result);
-
-    //    String out = thymeleafEngine.process(defaultTemplateData.toJson(), "VRD1");
-
 
     }
 

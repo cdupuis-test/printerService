@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Trade License</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        width: 210mm;
+        /*height: 297mm;*/
+        page-break-after: always;
+      }
+    }
+
+    table{
+      max-width: 2480px;
+      width:100%;
+    }
+    table td{
+      width: auto;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+    </style>
+</head>
+<table>
+  <tr>
+  <td th:each="trade : ${Data}" th:include="TradeLicense" />
+  </tr>
+</table>
+</html>
+

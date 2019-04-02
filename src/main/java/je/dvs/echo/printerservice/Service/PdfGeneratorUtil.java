@@ -3,6 +3,7 @@ package je.dvs.echo.printerservice.Service;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.w3c.tidy.Tidy;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
@@ -14,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.UUID;
 
-@Component
+@Service
 public class PdfGeneratorUtil {
 
     @Autowired
@@ -47,20 +48,19 @@ public class PdfGeneratorUtil {
             renderer.setDocumentFromString(xHtml,baseUrl);
             renderer.layout();
             renderer.createPDF(os,true);
-            JSONObject filepath = new JSONObject(json);
-            filepath.put("FilePath", outputFile.getPath());
+//            JSONObject filepath = new JSONObject(json);
+           // filepath.put("FilePath", outputFile.getPath());
 
             System.out.println(outputFile.getPath());
-            filepath.put("FileName", PDF_NAME);
+           // filepath.put("FileName", PDF_NAME);
             os.close();
             byte[] input_file = Files.readAllBytes(Paths.get(outputFile.getPath()));
 
-
             byte[] encodedBytes = Base64.getEncoder().encode(input_file);
 
-            filepath.remove("email_template");
+//            filepath.remove("email_template");
 
-            System.out.println(filepath);
+//            System.out.println(filepath);
 
             return new String(encodedBytes);
         }

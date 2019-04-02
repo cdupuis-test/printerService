@@ -1,10 +1,8 @@
 package je.dvs.echo.printerservice.Domain;
 
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@PropertySource("classpath:application.properties")
 public class Address {
 
 

@@ -3,9 +3,11 @@ package je.dvs.echo.printerservice.Domain;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
+import java.io.Serializable;
+
 @Setter
-public class ExportCert {
+@Getter
+public class ExportCert implements Serializable {
 
     public String Date;
     public String registrationNumber;
@@ -28,5 +30,32 @@ public class ExportCert {
     public String RegDate;
     public String Status;
     public String Notes;
+
+    public ExportCert(){};
+
+    public ExportCert(String date, String registrationNumber, String referenceNo, String vinChassisFrame, String engineNo, String make, String model, String bodyType, String seats, String CC, String typeOfFuel, String colour, String weight, String typeApproval, String CO2, String firstReg, String name, String address, String regDate, String status, String notes) {
+        Date = date;
+        this.registrationNumber = registrationNumber;
+        this.referenceNo = referenceNo;
+        VinChassisFrame = vinChassisFrame;
+        EngineNo = engineNo;
+        Make = make;
+        Model = model;
+        BodyType = bodyType;
+        Seats = seats;
+        this.CC = CC;
+        TypeOfFuel = typeOfFuel;
+        Colour = colour;
+        Weight = weight;
+        TypeApproval = typeApproval;
+        this.CO2 = CO2;
+        FirstReg = firstReg;
+        Name = name;
+        Address = address;
+        RegDate = regDate;
+        Status = status;
+        Notes = notes;
+    }
+
 
 }

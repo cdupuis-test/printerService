@@ -9,6 +9,7 @@ import je.dvs.echo.printerservice.Service.PdfGeneratorUtil;
 import je.dvs.echo.printerservice.Service.ThymeleafEngine;
 import org.json.JSONObject;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Ignore
 public class ThymeleafEngineTests {
 
     @Autowired

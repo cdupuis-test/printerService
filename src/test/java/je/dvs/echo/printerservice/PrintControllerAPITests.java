@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest
-//@Ignore
+@Ignore
 public class PrintControllerAPITests {
 
     @Autowired

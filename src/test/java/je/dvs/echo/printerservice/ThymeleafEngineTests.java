@@ -16,7 +16,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -208,25 +210,38 @@ public class ThymeleafEngineTests {
     @Test
     public void PrintTradeLicense() throws Exception {
 
-       HashMap<String,trade> TradeLicenseList = new HashMap<>();
+        List<trade> TradeLicenseList = new ArrayList<trade>();
 
         trade trade1 = new trade();
         trade1.setRegistrationMark("J1");
         trade1.setFee("100");
         trade1.setExpiredDate("31/12/2020");
 
-        TradeLicenseList.put("trade",trade1);
-
         trade trade2 = new trade();
         trade2.setRegistrationMark("J2");
         trade2.setFee("100");
         trade2.setExpiredDate("31/12/2020");
 
-        TradeLicenseList.put("trade2",trade2);
+        trade trade3 = new trade();
+        trade3.setRegistrationMark("J44343");
+        trade3.setFee("95.00");
+        trade3.setExpiredDate("31/12/2020");
+
+        trade trade4 = new trade();
+        trade4.setRegistrationMark("J0001");
+        trade4.setFee("95.00");
+        trade4.setExpiredDate("31/19/2020");
+
+        TradeLicenseList.add(trade1);
+        TradeLicenseList.add(trade2);
+        TradeLicenseList.add(trade3);
+        TradeLicenseList.add(trade4);
 
         String Trade = new ObjectMapper().writeValueAsString(TradeLicenseList);
 
         String result = pdfGeneratorUtil.createPdf(Trade,"FinalTradeLicense");
+
+        System.out.println(result);
 
     }
 

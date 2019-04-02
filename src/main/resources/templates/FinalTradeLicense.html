@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <title>Trade License</title>
 </head>
-<table>
-  <tr th:each="t : ${TradeLicenseList}" th:include="TradeLicense"
-      th:text="300"}
- />
+<table style="border:1px solid;height:2.63in;width:2.51in">
+  <tr th:each="trade : ${TradeLicenseList}" th:include="TradeLicense" />
+  </tr>
 </table>
 </html>
 

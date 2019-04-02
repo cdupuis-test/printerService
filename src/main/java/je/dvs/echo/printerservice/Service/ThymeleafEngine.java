@@ -2,13 +2,14 @@ package je.dvs.echo.printerservice.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import je.dvs.echo.printerservice.Domain.Address;
+import je.dvs.echo.printerservice.Domain.trade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @Component
 public class ThymeleafEngine {
@@ -27,11 +28,13 @@ public class ThymeleafEngine {
 
         Context context =  new Context();
 
-        HashMap<String,Object> contexth = objectMapper.readValue(json,HashMap.class);
+        List<trade> contexth = objectMapper.readValue(json, List.class);
 
-        for(Map.Entry<String,Object> entry : contexth.entrySet()){
+        context.setVariable("TradeLicenseList", contexth);
 
-            context.setVariable(entry.getKey(),entry.getValue());
+        if(templateName.equals("ExportCert")) {
+            context.setVariable("address", new Address());
+            //   context.setVariable("ListOfBoxes", contexth.get("ListOfBoxes"));
         }
 
         String html = templateEngine.process(templateName, context);

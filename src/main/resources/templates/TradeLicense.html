@@ -1,4 +1,10 @@
-<tbody th:fragment="TradeLicense" xmlns:th="http://www.thymeleaf.org" class="">
+<div th:fragment="TradeLicense" xmlns:th="http://www.thymeleaf.org" class=".border">
+
+    <style>
+        .border {
+            border-width: 5px !important;
+        }
+    </style>
    <table style="border:1px solid;height:2.63in;width:2.51in">
      <tr>
        <td><strong>TRADE LICENSE</strong></p></td>
@@ -8,15 +14,15 @@
      </tr>
       <tr>
         <td>PLATE NO J</td>
-        <td class="value" th:text="${RegistrationMark}"></td>
+        <td class="value" th:text="${trade.registrationMark}"></td>
       </tr>
       <tr>
         <td>FEE</td>
-        <td class="value" th:text="${Fee}"></td>
+        <td class="value" th:text="${trade.fee}"></td>
       </tr>
       <tr>
         <td>EXPIRES</td>
-        <td class="value" th:text="${ExpiredDate}"></td>
+        <td class="value" th:text="${trade.expiredDate}"></td>
       </tr>
     </table>
-  </tbody>
+  </div>

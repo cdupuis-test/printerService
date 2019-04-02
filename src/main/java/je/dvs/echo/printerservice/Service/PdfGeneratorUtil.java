@@ -47,7 +47,7 @@ public class PdfGeneratorUtil {
             renderer.setDocumentFromString(xHtml,baseUrl);
             renderer.layout();
             renderer.createPDF(os,true);
-            JSONObject filepath = new JSONObject(json);
+//            JSONObject filepath = new JSONObject(json);
            // filepath.put("FilePath", outputFile.getPath());
 
             System.out.println(outputFile.getPath());
@@ -55,12 +55,11 @@ public class PdfGeneratorUtil {
             os.close();
             byte[] input_file = Files.readAllBytes(Paths.get(outputFile.getPath()));
 
-
             byte[] encodedBytes = Base64.getEncoder().encode(input_file);
 
-            filepath.remove("email_template");
+//            filepath.remove("email_template");
 
-            System.out.println(filepath);
+//            System.out.println(filepath);
 
             return new String(encodedBytes);
         }

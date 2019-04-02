@@ -3,6 +3,7 @@ package je.dvs.echo.printerservice.Service;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.w3c.tidy.Tidy;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
@@ -14,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.UUID;
 
-@Component
+@Service
 public class PdfGeneratorUtil {
 
     @Autowired

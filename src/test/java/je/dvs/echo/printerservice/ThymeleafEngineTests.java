@@ -23,7 +23,6 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Ignore
 public class ThymeleafEngineTests {
 
     @Autowired
@@ -39,7 +38,7 @@ public class ThymeleafEngineTests {
     String Fullname = "Sam Smith";
     String Address1 = "4";
     String Address2 = "Appletree Court";
-    String Address3 = "St.Helier";
+    //String Address3 = "St.Helier";
     String Postcode = "JE4 6GH";
     String Make = "";
     String Model = "Micra";
@@ -81,7 +80,7 @@ public class ThymeleafEngineTests {
         vrd1.setFullname(Fullname);
         vrd1.setAddress1(Address1);
         vrd1.setAddress2(Address2);
-        vrd1.setAddress3(Address3);
+     //   vrd1.setAddress3(Address3);
         vrd1.setPostcode(Postcode);
        // vrd1.setMake(Make);
         vrd1.setModel(Model);
@@ -148,7 +147,7 @@ public class ThymeleafEngineTests {
                 "      \"homePhone\":\"__vue_devtool_undefined__\",\n" +
                 "      \"address1\":\"18 Bel Royal Gardens\",\n" +
                 "      \"address2\":\"La Route De St Aubin\",\n" +
-                "      \"address3\":\"__vue_devtool_undefined__\",\n" +
+                "      \"address3\":\"\",\n" +
                 "      \"parish\":\"St. Lawrence\",\n" +
                 "      \"postCode\":\"JE3 1JU\",\n" +
                 "      \"licenseNo\":\"__vue_devtool_undefined__\",\n" +

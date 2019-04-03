@@ -124,7 +124,7 @@
     </tr>
     <tr>
       <td></td>
-      <td  class="value" th:text="${owner_details.address3}"></td>
+      <td  class="value" th:text="${owner_details?.address3}"></td>
     </tr>
     <tr>
       <td></td>
@@ -136,90 +136,90 @@
     <table class="vehicleBoxLeft border">
       <tr>
         <td class="label">Make</td>
-        <td class="value" th:text="${vehicle_details.vehicleMake}"></td>
+        <td class="value" th:text="${vehicle_details?.vehicleMake}"></td>
       </tr>
       <tr>
         <td class="label">D.3.Model</td>
-        <td class="value" th:text="${vehicle_details.vehicleModel}"></td>
+        <td class="value" th:text="${vehicle_details?.vehicleModel}"></td>
       </tr>
       <tr>
         <td class="label">D.5 Body Type</td>
-        <td class="value" th:text="${vehicle_details.vehicleBodyType}"></td>
+        <td class="value" th:text="${vehicle_details?.vehicleBodyType}"></td>
       </tr>
       <tr>
         <td class="label">J. Vehicle Category</td>
-        <td class="value" th:text="${vehicle_details.vehicleCategory}"></td>
+        <td class="value" th:text="${vehicle_details?.vehicleCategory}"></td>
       </tr>
       <tr>
         <td class="label">R.Colour</td>
-        <td class="value" th:text="${vehicle_details.primaryColour}"></td>
+        <td class="value" th:text="${vehicle_details?.primaryColour}"></td>
       </tr>
       <tr>
         <td class="label">S.1 Seating Capacity</td>
-        <td class="value" th:text="${vehicle_details.seatCapacity}"></td>
+        <td class="value" th:text="${vehicle_details?.seatCapacity}"></td>
       </tr>
       <tr>
         <td class="label">E.VIN/Chassis/FrameNo.</td>
-        <td class="value" th:text="${vehicle_details.chassisNo}"></td>
+        <td class="value" th:text="${vehicle_details?.chassisNo}"></td>
       </tr>
       <tr>
         <td class="label">P.5 Engine No.</td>
-        <td class="value" th:text="${vehicle_details.engineNo}"></td>
+        <td class="value" th:text="${vehicle_details?.engineNo}"></td>
       </tr>
       <tr>
         <td class="label">K. Type Approval No.</td>
-        <td class="value" th:text="${vehicle_details.typeApprovalNo}"></td>
+        <td class="value" th:text="${vehicle_details?.typeApprovalNo}"></td>
       </tr>
       <tr>
         <td class="label">P.1 Cylinder Capacity</td>
-        <td class="value" th:text="${vehicle_details.cubicCapacity}"></td>
+        <td class="value" th:text="${vehicle_details?.cubicCapacity}"></td>
       </tr>
       <tr>
         <td class="label">V.7 C02gkm</td>
-        <td class="value" th:text="${vehicle_details.co2}"></td>
+        <td class="value" th:text="${vehicle_details?.co2}"></td>
       </tr>
       <tr>
         <td class="label">P.3 Type of fuel</td>
-        <td class="value" th:text="${vehicle_details.fuelType}"></td>
+        <td class="value" th:text="${vehicle_details?.fuelType}"></td>
       </tr>
       <tr>
         <td class="label">Prev/Never Reg'd</td>
-        <td class="value" th:text="${registration_details.prevRegNo}"></td>
+        <td class="value" th:text="${registration_details?.prevRegNo}"></td>
       </tr>
       <tr>
         <td>Date registered in Jersey</td>
-        <td class="value" th:text="${owner_details.firstRegOnVrd1}"></td>
+        <td class="value" th:text="${owner_details?.firstRegOnVrd1}"></td>
       </tr>
     </table>
 
     <table class="vehicleBoxRight border">
       <tr>
         <td class="label">Previous country</td>
-        <td class="value" th:text="${registration_details.prevRegCountry}"></td>
+        <td class="value" th:text="${registration_details?.prevRegCountry}"></td>
       </tr>
       <tr>
         <td class="label">Date previously registered</td>
-        <td class="value" th:text="${registration_details.prevRegNoDate}"></td>
+        <td class="value" th:text="${registration_details?.prevRegNoDate}"></td>
       </tr>
       <tr>
         <td class="label">Previous Reg No.</td>
-        <td class="value" th:text="${registration_details.prevRegNo}"></td>
+        <td class="value" th:text="${registration_details?.prevRegNo}"></td>
       </tr>
       <tr>
         <td class="label">Odometer reading at date of transfer</td>
-        <td class="value" th:text="${vehicle_details.odometer}"></td>
+        <td class="value" th:text="${vehicle_details?.odometer}"></td>
       </tr>
       <tr>
         <td class="label">Width</td>
-        <td class="value" th:text="${vehicle_details.vehicleWidth}"></td>
+        <td class="value" th:text="${vehicle_details?.vehicleWidth}"></td>
       </tr>
       <tr>
         <td class="label">Length</td>
-        <td class="value" th:text="${vehicle_details.vehicleLength}"></td>
+        <td class="value" th:text="${vehicle_details?.vehicleLength}"></td>
       </tr>
       <tr>
         <td class="label">F.1.Gross Vehicle Weight</td>
-        <td class="value" th:text="${vehicle_details.weight}"></td>
+        <td class="value" th:text="${vehicle_details?.weight}"></td>
       </tr>
       <tr>
         <td class="label">I.Last change of keeper</td>
@@ -231,11 +231,11 @@
       </tr>
       <tr>
         <td class="label">B.First Ever Reg'd</td>
-        <td class="value" th:text="${owner_details.firstRegOnVrd1}"></td>
+        <td class="value" th:text="${owner_details?.firstRegOnVrd1}"></td>
       </tr>
       <tr>
         <td class="label">G.Unladen Weight</td>
-        <td class="value" th:text="${vehicle_details.unladenWeight}"></td>
+        <td class="value" th:text="${vehicle_details?.unladenWeight}"></td>
       </tr>
     </table>
   </div>

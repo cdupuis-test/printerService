@@ -18,7 +18,7 @@ public class PrintController {
 
 
     @CrossOrigin(origins = "*")
-    @RequestMapping(method = RequestMethod.GET, path="/VRD1")
+    @RequestMapping(method = RequestMethod.POST, path="/VRD1")
     public String printVRD1(@RequestBody  String VRD1Data) throws Exception {
 
         String RegistrationData = URLDecoder.decode(VRD1Data, "UTF-8");

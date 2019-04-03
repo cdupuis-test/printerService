@@ -10,7 +10,7 @@ public class trade {
     String registrationMark;
     String fee;
     String expiredDate;
-
+    String name;
 
     public trade(){};
 

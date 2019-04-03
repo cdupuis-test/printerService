@@ -17,21 +17,24 @@
       }
     }
 
-    table{
-      max-width: 2480px;
-      width:100%;
-    }
-    table td{
-      width: auto;
-      overflow: hidden;
-      word-wrap: break-word;
-    }
+    /*table{*/
+      /*max-width: 2480px;*/
+      /*width:100%;*/
+    /*}*/
+    /*table td{*/
+      /*width: auto;*/
+      /*overflow: hidden;*/
+      /*word-wrap: break-word;*/
+    /*}*/
+    .table {display:block; margin: 4px;}
+    .row { display:block;}
+    .cell {display:inline-block; margin: 4px;}
     </style>
 </head>
-<table>
-  <tr>
-  <td th:each="trade : ${Data}" th:include="TradeLicense" />
-  </tr>
-</table>
+<div class="table">
+  <div class="row" th:each="index:${#numbers.sequence(1, 4)}" style="background-color: chartreuse">
+    <div class="cell" th:each="trade,pStat : ${Data}" th:include="TradeLicense"/>
+  </div>
+</div>
 </html>
 

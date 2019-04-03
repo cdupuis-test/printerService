@@ -58,8 +58,7 @@ public class ThymeleafEngine {
 
         if(templateName.equals("ExportCert")) {
             context.setVariable("address", new Address());
-         //   context.setVariable("ListOfBoxes", contexth.get("ListOfBoxes"));
-        }
+         }
         System.out.println("Model:" + context.getVariables());
 
         templateEngine.initialize();

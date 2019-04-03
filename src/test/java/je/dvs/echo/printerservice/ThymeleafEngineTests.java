@@ -244,7 +244,7 @@ public class ThymeleafEngineTests {
     public void PrintExportCert() throws Exception {
 
         ExportCert exportCert = new ExportCert();
-        exportCert.Date = LocalDateTime.now().toString();
+        exportCert.Date = LocalDateTime.now().toLocalDate().toString();
         exportCert.registrationNumber = "J12345";
         exportCert.referenceNo = "CO-3434";
         exportCert.VinChassisFrame = "303030303003030";
@@ -262,7 +262,7 @@ public class ThymeleafEngineTests {
         exportCert.Address="1 Apple Tree Court";
         exportCert.Status="REGISTERED";
         exportCert.Notes="";
-        exportCert.RegDate = LocalDateTime.now().plusDays(1L).toString();
+        exportCert.RegDate = LocalDateTime.now().plusDays(1L).toLocalDate().toString();
 
 
         String json = new ObjectMapper().writeValueAsString(exportCert);

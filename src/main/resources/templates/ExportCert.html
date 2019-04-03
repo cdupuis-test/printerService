@@ -11,7 +11,7 @@
     @page {
       size: A4 portrait;
 
-      margin-top: 5cm;
+      margin-top: 3cm;
       margin-left: 0.5cm;
       margin-right: 0.5cm;
       margin-bottom: 0.5cm;
@@ -36,6 +36,12 @@
       margin-top: 40px;
     }
 
+    h3{
+      padding: 0px;
+      margin: 0px;
+      margin-bottom: 0px;
+    }
+
 
     h5,h4 {
       padding : 0;
@@ -48,13 +54,6 @@
       line-height : 18px;
       margin-bottom: 0px;
       border: solid 1px #000000;
-    }
-
-    .permit{
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      text-align: right;
     }
 
 
@@ -72,6 +71,7 @@
 
     .centre {
       text-align:center;
+      padding: 0;
     }
 
     .address-block {
@@ -84,9 +84,6 @@
       border-collapse: collapse;
     }
 
-    tr, .vehicle_details td{
-      border: solid 1px #000000;
-    }
 
     hr {
       background-color: #000000;
@@ -111,27 +108,38 @@
   <title>Certificate Of Export For A Motor Vehicle</title>
 </head>
 <body>
-<div class='header' th:include="../fragments/header" >
+<div class='header' th:include="../fragments/header" ></div>
 
+<br/>
+<br/>
   <h3 class="centre">CERTIFICATE OF EXPORT</h3>
   <h3 class="centre">FOR A MOTOR VEHICLE</h3>
-
-  <td>Date:</td>
-  <strong>
-    <td th:text="${Date}"></td>
-  </strong>
-
-  <td>Registration No.:</td>
-  <strong>
-    <td th:text="${registrationNumber}"></td>
-  </strong>
-
-  <td>No:</td>
-  <strong>
-    <td th:text="${referenceNo}"></td>
-  </strong>
-
-
+<br/>
+<br/>
+<br/>
+<table>
+  <td>
+    <tr>
+      <td>Date:</td>
+      <strong>
+        <td th:text="${Date}"></td>
+      </strong>
+      <td>Registration No.:</td>
+      <strong>
+        <td th:text="${registrationNumber}"></td>
+      </strong>
+    </tr>
+    <tr>
+      <td>No:</td>
+      <strong>
+        <td th:text="${referenceNo}"></td>
+      </strong>
+    </tr>
+  </td>
+</table>
+<br/>
+<br/>
+<br/>
   <table class="vehicle_details">
   <tr>
     <td>
@@ -230,7 +238,7 @@
   <h4>TO WHOM IT MAY CONCERN</h4>
 
   <h5>I hereby certify that the above vehicle was last registered in the name of:</h5>
-
+<br/>
   <table>
     <tr>
       <td>
@@ -247,11 +255,11 @@
     </tr>
   </table>
 
-  <h4>WHO ACQUIRED THE VEHICLE ON</h4><td th:text="${RegDate}">
+<h4>WHO ACQUIRED THE VEHICLE ON</h4><p th:text="${RegDate}"></p>
 
-  <h5> The vehicle was</h5><td th:text="${Status}"/>
+  <h5> The vehicle was</h5><p th:text="${Status}"></p>
 
-  <h5>The registration document for this vehicle has been retained by The Driver and Vehicle Standards and the above registration number will not be re-allocated in Jersey</h5>
+  <h5>The registration document for this vehicle has been retained by The Driver and Vehicle Standards and the above registration number will not be re-allocated in Jersey.</h5>
 
   <h5>Special Notes:</h5>
 

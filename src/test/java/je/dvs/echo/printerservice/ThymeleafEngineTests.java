@@ -1,6 +1,4 @@
 package je.dvs.echo.printerservice;
-<<<<<<< HEAD
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import je.dvs.echo.printerservice.Domain.ExportCert;

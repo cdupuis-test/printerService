@@ -1,14 +1,15 @@
 package je.dvs.echo.printerservice;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import je.dvs.echo.printerservice.Domain.ExportCert;
 import je.dvs.echo.printerservice.Domain.VRD1;
 import je.dvs.echo.printerservice.Domain.trade;
 import je.dvs.echo.printerservice.Service.PdfGeneratorUtil;
 import je.dvs.echo.printerservice.Service.ThymeleafEngine;
+import org.apache.camel.json.simple.JsonArray;
 import org.json.JSONObject;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -37,7 +37,7 @@ public class ThymeleafEngineTests {
     String Fullname = "Sam Smith";
     String Address1 = "4";
     String Address2 = "Appletree Court";
-    String Address3 = "St.Helier";
+    //String Address3 = "St.Helier";
     String Postcode = "JE4 6GH";
     String Make = "";
     String Model = "Micra";
@@ -79,7 +79,7 @@ public class ThymeleafEngineTests {
         vrd1.setFullname(Fullname);
         vrd1.setAddress1(Address1);
         vrd1.setAddress2(Address2);
-        vrd1.setAddress3(Address3);
+     //   vrd1.setAddress3(Address3);
         vrd1.setPostcode(Postcode);
        // vrd1.setMake(Make);
         vrd1.setModel(Model);
@@ -146,7 +146,7 @@ public class ThymeleafEngineTests {
                 "      \"homePhone\":\"__vue_devtool_undefined__\",\n" +
                 "      \"address1\":\"18 Bel Royal Gardens\",\n" +
                 "      \"address2\":\"La Route De St Aubin\",\n" +
-                "      \"address3\":\"__vue_devtool_undefined__\",\n" +
+                "      \"address3\":\"\",\n" +
                 "      \"parish\":\"St. Lawrence\",\n" +
                 "      \"postCode\":\"JE3 1JU\",\n" +
                 "      \"licenseNo\":\"__vue_devtool_undefined__\",\n" +
@@ -195,15 +195,9 @@ public class ThymeleafEngineTests {
 
 
 
-
-        //Function call
-
       String result =  pdfGeneratorUtil.createPdf(defaultTemplateData.toString(),"VRD1");
 
       System.out.println("Result:" + result);
-
-    //    String out = thymeleafEngine.process(defaultTemplateData.toJson(), "VRD1");
-
 
     }
 
@@ -216,37 +210,26 @@ public class ThymeleafEngineTests {
         trade1.setRegistrationMark("J1");
         trade1.setFee("100");
         trade1.setExpiredDate("31/12/2020");
-        trade1.setName("Bob Sharkin Lowfer");
 
         trade trade2 = new trade();
         trade2.setRegistrationMark("J2");
         trade2.setFee("100");
         trade2.setExpiredDate("31/12/2020");
-        trade2.setName("Jacksones (CI) Limited");
 
         trade trade3 = new trade();
         trade3.setRegistrationMark("J44343");
         trade3.setFee("95.00");
         trade3.setExpiredDate("31/12/2020");
-        trade3.setName("Jacksones (CI) Limited");
 
         trade trade4 = new trade();
         trade4.setRegistrationMark("J0001");
         trade4.setFee("95.00");
         trade4.setExpiredDate("31/19/2020");
-        trade4.setName("Jacksones (CI) Limited");
-
-        trade trade5 = new trade();
-        trade5.setRegistrationMark("J4567");
-        trade5.setFee("95.00");
-        trade5.setExpiredDate("31/19/2022");
-        trade5.setName("Jacksones (CI) Limited");
 
         TradeLicenseList.add(trade1);
         TradeLicenseList.add(trade2);
         TradeLicenseList.add(trade3);
         TradeLicenseList.add(trade4);
-        TradeLicenseList.add(trade5);
 
         String Trade = new ObjectMapper().writeValueAsString(TradeLicenseList);
 
@@ -260,7 +243,7 @@ public class ThymeleafEngineTests {
     public void PrintExportCert() throws Exception {
 
         ExportCert exportCert = new ExportCert();
-        exportCert.Date = LocalDateTime.now().toString();
+        exportCert.Date = LocalDateTime.now().toLocalDate().toString();
         exportCert.registrationNumber = "J12345";
         exportCert.referenceNo = "CO-3434";
         exportCert.VinChassisFrame = "303030303003030";
@@ -278,7 +261,7 @@ public class ThymeleafEngineTests {
         exportCert.Address="1 Apple Tree Court";
         exportCert.Status="REGISTERED";
         exportCert.Notes="";
-        exportCert.RegDate = LocalDateTime.now().plusDays(1L).toString();
+        exportCert.RegDate = LocalDateTime.now().plusDays(1L).toLocalDate().toString();
 
 
         String json = new ObjectMapper().writeValueAsString(exportCert);
@@ -291,3 +274,4 @@ public class ThymeleafEngineTests {
     }
 
 }
+

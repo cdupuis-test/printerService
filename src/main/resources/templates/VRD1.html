@@ -10,8 +10,9 @@
   @media print {
     html, body {
       width: 210mm;
-      /*height: 297mm;*/
       page-break-after: avoid;
+      /*For printing*/
+      margin: 0;
     }
   }
 
@@ -24,7 +25,7 @@
       margin-top: 0.09in;
       margin-right: 0.09in;
       height: 0.77in;
-      width: 1.23in;
+      width: 2.56in;
       position: relative;
       float: right;
     }
@@ -64,11 +65,11 @@
     .partBbox1 {
       margin-right: 0.09in;
       margin-bottom: 2.06in;
+      margin-top:7.20in;
       margin-left: 6.11in;
       height: 0.77in;
       width: 1.23in;
       position: relative;
-      float: right;
     }
 
     .value {
@@ -94,17 +95,22 @@
 
 <div class="subpage">
 
+
   <table class="partAbox1 border">
     <tr>
+      <td style="padding-right: 1.44in">A</td>
       <td class="value" th:text="${vehicle_details.regNo}"></td>
     </tr>
     <tr>
+      <td style="padding-right: 1.44in"></td>
       <td class="value" th:text="${docUUID}"></td>
     </tr>
     <tr>
+      <td style="padding-right: 1.44in"></td>
       <td class="value" th:text="${DocSeq}"></td>
     </tr>
     <tr>
+      <td style="padding-right: 1.44in"></td>
       <td class="value" th:text="${DateOfIssue}"></td>
     </tr>
   </table>

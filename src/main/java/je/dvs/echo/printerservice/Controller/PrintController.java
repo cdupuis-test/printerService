@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 @RestController
@@ -24,6 +25,15 @@ public class PrintController {
         String RegistrationData = URLDecoder.decode(VRD1Data, "UTF-8");
 
         return  pdfGeneratorUtil.createPdf(RegistrationData,"VRD1");
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(method = RequestMethod.POST, path="/ExportCert")
+    public String printExportCert(@RequestBody String VehicleData) throws Exception {
+
+        String ExportData = URLDecoder.decode(VehicleData, "UTF-8");
+
+        return pdfGeneratorUtil.createPdf(ExportData, "ExportCert");
     }
 
     @Bean

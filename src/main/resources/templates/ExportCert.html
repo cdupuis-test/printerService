@@ -49,13 +49,6 @@
       margin-bottom: 0px;
     }
 
-    p, .textbox{
-      padding : 0;
-      line-height : 18px;
-      margin-bottom: 0px;
-      border: solid 1px #000000;
-    }
-
 
     .right {
       text-align: right;
@@ -255,11 +248,15 @@
     </tr>
   </table>
 
-<h4>WHO ACQUIRED THE VEHICLE ON</h4><p th:text="${RegDate}"></p>
+<h4 th:inline="text">WHO ACQUIRED THE VEHICLE ON [[${RegDate}]]</h4>
 
-  <h5> The vehicle was</h5><p th:text="${Status}"></p>
+  <h5 th:inline="text">The vehicle was [[${Status}]] when registered in Jersey C.I on [[${FirstReg}]]</h5>
 
   <h5>The registration document for this vehicle has been retained by The Driver and Vehicle Standards and the above registration number will not be re-allocated in Jersey.</h5>
+<br/>
+<br/>
+  <h5>Signed: --------------------</h5>
+
 
   <h5>Special Notes:</h5>
 

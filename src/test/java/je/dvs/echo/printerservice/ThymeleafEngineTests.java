@@ -216,26 +216,37 @@ public class ThymeleafEngineTests {
         trade1.setRegistrationMark("J1");
         trade1.setFee("100");
         trade1.setExpiredDate("31/12/2020");
+        trade1.setName("Bob Sharkin Lowfer");
 
         trade trade2 = new trade();
         trade2.setRegistrationMark("J2");
         trade2.setFee("100");
         trade2.setExpiredDate("31/12/2020");
+        trade2.setName("Jacksones (CI) Limited");
 
         trade trade3 = new trade();
         trade3.setRegistrationMark("J44343");
         trade3.setFee("95.00");
         trade3.setExpiredDate("31/12/2020");
+        trade3.setName("Jacksones (CI) Limited");
 
         trade trade4 = new trade();
         trade4.setRegistrationMark("J0001");
         trade4.setFee("95.00");
         trade4.setExpiredDate("31/19/2020");
+        trade4.setName("Jacksones (CI) Limited");
+
+        trade trade5 = new trade();
+        trade5.setRegistrationMark("J4567");
+        trade5.setFee("95.00");
+        trade5.setExpiredDate("31/19/2022");
+        trade5.setName("Jacksones (CI) Limited");
 
         TradeLicenseList.add(trade1);
         TradeLicenseList.add(trade2);
         TradeLicenseList.add(trade3);
         TradeLicenseList.add(trade4);
+        TradeLicenseList.add(trade5);
 
         String Trade = new ObjectMapper().writeValueAsString(TradeLicenseList);
 

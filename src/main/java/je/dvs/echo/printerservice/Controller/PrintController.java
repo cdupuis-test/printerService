@@ -26,6 +26,15 @@ public class PrintController {
         return  pdfGeneratorUtil.createPdf(RegistrationData,"VRD1");
     }
 
+    @CrossOrigin(origins = "*")
+    @RequestMapping(method = RequestMethod.POST, path="/TRADELICENSE")
+    public String printTRADE(String TRADEData) throws Exception {
+
+        String TradeData = URLDecoder.decode(TRADEData, "UTF-8");
+
+        return  pdfGeneratorUtil.createPdf(TradeData,"FinalTradeLicense");
+    }
+
     @Bean
     CharacterEncodingFilter characterEncodingFilter() {
         CharacterEncodingFilter filter = new CharacterEncodingFilter();

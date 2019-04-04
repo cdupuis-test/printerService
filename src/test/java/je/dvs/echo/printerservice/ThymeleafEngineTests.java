@@ -241,8 +241,8 @@ public class ThymeleafEngineTests {
 
         ExportCert exportCert = new ExportCert();
         exportCert.Date = LocalDateTime.now().toLocalDate().toString();
-        exportCert.registrationNumber = "J12345";
-        exportCert.referenceNo = "CO-3434";
+        exportCert.RegistrationNumber = "J12345";
+        exportCert.ReferenceNo = "CO-3434";
         exportCert.VinChassisFrame = "303030303003030";
         exportCert.EngineNo = "3902839505829";
         exportCert.Make="Nissan";

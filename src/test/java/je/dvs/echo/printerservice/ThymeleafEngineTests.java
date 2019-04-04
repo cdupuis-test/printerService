@@ -1,15 +1,12 @@
 package je.dvs.echo.printerservice;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import je.dvs.echo.printerservice.Domain.ExportCert;
 import je.dvs.echo.printerservice.Domain.VRD1;
 import je.dvs.echo.printerservice.Domain.trade;
 import je.dvs.echo.printerservice.Service.PdfGeneratorUtil;
 import je.dvs.echo.printerservice.Service.ThymeleafEngine;
-import org.apache.camel.json.simple.JsonArray;
 import org.json.JSONObject;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

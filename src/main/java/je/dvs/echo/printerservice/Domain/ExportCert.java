@@ -10,8 +10,8 @@ import java.io.Serializable;
 public class ExportCert implements Serializable {
 
     public String Date;
-    public String registrationNumber;
-    public String referenceNo;
+    public String RegistrationNumber;
+    public String ReferenceNo;
     public String VinChassisFrame;
     public String EngineNo;
     public String Make;
@@ -33,29 +33,6 @@ public class ExportCert implements Serializable {
 
     public ExportCert(){};
 
-    public ExportCert(String date, String registrationNumber, String referenceNo, String vinChassisFrame, String engineNo, String make, String model, String bodyType, String seats, String CC, String typeOfFuel, String colour, String weight, String typeApproval, String CO2, String firstReg, String name, String address, String regDate, String status, String notes) {
-        Date = date;
-        this.registrationNumber = registrationNumber;
-        this.referenceNo = referenceNo;
-        VinChassisFrame = vinChassisFrame;
-        EngineNo = engineNo;
-        Make = make;
-        Model = model;
-        BodyType = bodyType;
-        Seats = seats;
-        this.CC = CC;
-        TypeOfFuel = typeOfFuel;
-        Colour = colour;
-        Weight = weight;
-        TypeApproval = typeApproval;
-        this.CO2 = CO2;
-        FirstReg = firstReg;
-        Name = name;
-        Address = address;
-        RegDate = regDate;
-        Status = status;
-        Notes = notes;
-    }
 
 
 }

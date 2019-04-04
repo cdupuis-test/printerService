@@ -36,6 +36,7 @@ public class PrintController {
         return  pdfGeneratorUtil.createPdf(TradeData,"FinalTradeLicense");
     }
 
+    @CrossOrigin("*")
     @RequestMapping(method = RequestMethod.POST, path="/ExportCert")
     public String printExportCert(@RequestBody String VehicleData) throws Exception {
 

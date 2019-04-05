@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 @RestController
@@ -28,8 +27,8 @@ public class PrintController {
     }
 
     @CrossOrigin(origins = "*")
-    @RequestMapping(method = RequestMethod.POST, path="/TRADELICENSE")
-    public String printTRADE(String TRADEData) throws Exception {
+    @RequestMapping(method = RequestMethod.POST, path="/TradeLicense")
+    public String printTRADE(@RequestBody  String TRADEData) throws Exception {
 
         String TradeData = URLDecoder.decode(TRADEData, "UTF-8");
 

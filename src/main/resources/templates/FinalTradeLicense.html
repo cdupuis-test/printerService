@@ -31,7 +31,7 @@
     .cell {display:inline-block; margin: 4px;}
     </style>
 </head>
-<div class="table">
+<div style="border:thin">
   <div class="row" th:each="index:${#numbers.sequence(1, 4)}" style="background-color: chartreuse">
     <div class="cell" th:each="trade,pStat : ${Data}" th:include="TradeLicense"/>
   </div>

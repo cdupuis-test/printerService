@@ -7,8 +7,15 @@
            display: inline-flex;
            align-items: center;
        }
+       .table_outer {
+           border: 1px solid #000000;
+       }
+
+       td {
+           border: none;
+       }
    </style>
-   <table style=" height: 2.62in; width: 2.52in;">
+   <table style="height: 2.62in; width: 2.52in;" class="table_outer">
      <tr>
        <td style="width:1000px"><strong>TRADE LICENSE</strong></p></td>
        <td></td>
@@ -18,10 +25,10 @@
      </tr>
      <tr>
          <td colspan="3">
-           <table style="border: solid 1px; height: 1.5in; width: 2.0in;">
+           <table style="height: 1.5in; width: 2.0in;">
               <tr></tr>
               <tr>
-                <td class="tdheader">PLATE NO J</td>
+                <td class="tdheader">PLATE NO</td>
                 <td class="value" th:text="${trade.registrationMark}"></td>
               </tr>
               <tr>

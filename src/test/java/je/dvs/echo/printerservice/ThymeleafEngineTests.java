@@ -20,7 +20,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Ignore
+//@Ignore
 public class ThymeleafEngineTests {
 
     @Autowired
@@ -229,6 +229,15 @@ public class ThymeleafEngineTests {
         TradeLicenseList.add(trade2);
         TradeLicenseList.add(trade3);
         TradeLicenseList.add(trade4);
+
+        for (int index = 0; index <= 5; ++index) {
+            trade trade = new trade();
+            trade.setRegistrationMark("J0001");
+            trade.setFee("95.00");
+            trade.setExpiredDate("31/19/2020");
+
+            TradeLicenseList.add(trade);
+        }
 
         String Trade = new ObjectMapper().writeValueAsString(TradeLicenseList);
 

@@ -1,12 +1,15 @@
 package je.dvs.echo.printerservice.Controller;
 
 import je.dvs.echo.printerservice.Service.PdfGeneratorUtil;
+import org.apache.camel.json.simple.JsonObject;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
 import java.net.URLDecoder;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/print")
@@ -41,7 +44,14 @@ public class PrintController {
 
         String ExportData = URLDecoder.decode(VehicleData, "UTF-8");
 
-        return pdfGeneratorUtil.createPdf(ExportData, "ExportCert");
+        JSONObject ExportObj = new JSONObject(ExportData);
+        String RefNo =  ExportObj.getString("ReferenceNo");
+        String NewRefNo = RefNo.substring(0,6);
+        NewRefNo = "COE -" + NewRefNo;
+
+        ExportObj.put("ReferenceNo", NewRefNo);
+
+        return pdfGeneratorUtil.createPdf(ExportObj.toString(), "ExportCert");
     }
 
     @Bean
